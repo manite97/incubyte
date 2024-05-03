@@ -35,4 +35,10 @@ RSpec.describe 'add' do
       expect(add("5,1\n2,3")).to eq(11)
     end
   end
+
+   context 'with custom delimiters' do
+    it 'returns the sum of numbers separated by a custom delimiter' do
+      expect(add("//;\n6;2")).to eq(8)
+    end
+  end
 end
