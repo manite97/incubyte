@@ -1,6 +1,8 @@
 def add(numbers)
 return 0 if numbers.empty?
-numbers = numbers.split(',')
+delimiter = ",|\\n"
+numbers = numbers.split(/#{delimiter}/)
+
 
   sum = 0
   numbers.each do |num|
