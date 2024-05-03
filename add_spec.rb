@@ -24,8 +24,15 @@ RSpec.describe 'add' do
       expect(add('1,2')).to eq(3)
     end
 
+
     it 'returns the sum of three numbers separated by commas' do
-      expect(add('1,2,3')).to eq(6)
+      expect(add('6,2,3')).to eq(11)
+    end
+  end
+
+  context 'with newlines between numbers' do
+    it 'returns the sum of numbers separated by newlines and commas' do
+      expect(add("5,1\n2,3")).to eq(11)
     end
   end
 end
