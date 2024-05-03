@@ -1,5 +1,12 @@
 def add(numbers)
 return 0 if numbers.empty?
-return numbers.to_i if numbers.length == 1
+numbers = numbers.split(',')
+
+  sum = 0
+  numbers.each do |num|
+    num = num.to_i 
+    sum += num
+  end
+  sum
 end
 
