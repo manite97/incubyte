@@ -41,4 +41,14 @@ RSpec.describe 'add' do
       expect(add("//;\n6;2")).to eq(8)
     end
   end
+
+    context 'with negative numbers' do
+    it 'raises an exception for a negative number' do
+      expect { add("1,-2,3") }.to raise_error(RuntimeError, "negative numbers not allowed -2")
+    end
+
+    it 'raises an exception with all negative numbers listed' do
+      expect { add("-1,-2,-3") }.to raise_error(RuntimeError, "negative numbers not allowed -1, -2, -3")
+    end
+  end
 end
