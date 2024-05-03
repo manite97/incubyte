@@ -10,12 +10,19 @@ end
 numbers = numbers.split(/#{delimiter}/)
 
 
-
-  sum = 0
-  numbers.each do |num|
-    num = num.to_i 
-    sum += num
+sum = 0
+negatives = []
+  
+numbers.each do |num|
+  num = num.to_i
+  if num.negative?
+    negatives << num
+  else
+  sum += num
   end
+  
+end
+  raise "negative numbers not allowed #{negatives.join(", ")}" if !negatives.empty?
   sum
 end
 
